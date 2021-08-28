@@ -3,18 +3,25 @@
 namespace IdentityServer.Repositories.Clients;
 public class InMemoryClientsRepository : IClientsRepository
 {
-    public Task<IEnumerable<Client>> FindClientsAsync()
+    public Task<Client> FindClientByIdAsync(string clientId)
     {
         var clients = new List<Client>
         {
             new Client
             {
-                ClientId = "service.weather",
+                ClientId = "service",
                 ClientSecrets = { new Secret("secret".Sha256()) },
                 AllowedGrantTypes = { GrantType.ClientCredentials },
                 AllowedScopes = { "weather.read" },
+            },
+            new Client
+            {
+                ClientId = "customer",
+                AllowedGrantTypes = { GrantType.ResourceOwnerPassword },
+                AllowedScopes = { "openid", "profile" },
+                RequireClientSecret = false
             }
         };
-        return Task.FromResult<IEnumerable<Client>>(clients);
+        return Task.FromResult(clients.First(c=>c.ClientId == clientId));
     }
 }

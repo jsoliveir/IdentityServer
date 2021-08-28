@@ -15,7 +15,7 @@ public class ClientStoreService : IClientStore
 
     public async Task<Client> FindClientByIdAsync(string clientId)
     {
-        var clients = await _clientsRepository.FindClientsAsync();
-        return clients.First();
+        var client = await _clientsRepository.FindClientByIdAsync(clientId);
+        return client;
     }
 }

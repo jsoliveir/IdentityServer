@@ -4,8 +4,6 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
 
 var jwtSecurityScheme = new OpenApiSecurityScheme
@@ -15,7 +13,6 @@ var jwtSecurityScheme = new OpenApiSecurityScheme
     Name = "JWT Authentication",
     In = ParameterLocation.Header,
     Type = SecuritySchemeType.Http,
-    Description = "Put **_ONLY_** your JWT Bearer token on textbox below!",
     Reference = new OpenApiReference
     {
         Id = JwtBearerDefaults.AuthenticationScheme,
@@ -58,7 +55,6 @@ if (builder.Environment.IsDevelopment())
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "Service.Core.Weather v1");          
     });
-
 }
 
 app.UseHttpsRedirection();

@@ -9,7 +9,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Core.Weather", "tes
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9E5C4564-7362-47C3-AEA7-F25405DD3948}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "integration", "integration", "{1A8A0CEB-BCDC-4708-82D6-23F9D9FACE3D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "interation", "interation", "{1A8A0CEB-BCDC-4708-82D6-23F9D9FACE3D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "client_credentials", "client_credentials", "{C37DFE4E-8FE5-4DAA-A294-932ECAFA2937}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7704D652-7E63-4589-8F41-1AFA874085EA}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,8 +37,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{97B0D0CD-35C2-47FE-9E47-89A17CA52150} = {1A8A0CEB-BCDC-4708-82D6-23F9D9FACE3D}
+		{97B0D0CD-35C2-47FE-9E47-89A17CA52150} = {C37DFE4E-8FE5-4DAA-A294-932ECAFA2937}
 		{1A8A0CEB-BCDC-4708-82D6-23F9D9FACE3D} = {9E5C4564-7362-47C3-AEA7-F25405DD3948}
+		{C37DFE4E-8FE5-4DAA-A294-932ECAFA2937} = {1A8A0CEB-BCDC-4708-82D6-23F9D9FACE3D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6B898BF9-C4C8-4377-81E6-6BC6855314AC}

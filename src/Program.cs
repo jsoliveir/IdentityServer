@@ -8,18 +8,20 @@ using IndentityServer.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new() { Title = "IdentityServer", Version = "v1" });
+    c.SwaggerDoc("v1", new() 
+    { 
+        Title = "IdentityServer", 
+        Version = "v1" 
+    });
 });
 
 builder.Services
-    .AddIdentityServer(o=>o.UserInteraction.LoginUrl = "https://myaccount.google.com")
-    .AddClientStore<ClientStoreService>()
+    .AddIdentityServer()
     .AddResourceStore<ResourceStoreService>()
+    .AddClientStore<ClientStoreService>()
     .AddProfileService<ProfileService>()
     .AddDeveloperSigningCredential();
 
@@ -34,9 +36,9 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (builder.Environment.IsDevelopment())
 {
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "IdentityServer v1"));
     app.UseDeveloperExceptionPage();
     app.UseSwagger();
-    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "IdentityServer v1"));
 }
 
 app.UseIdentityServer();

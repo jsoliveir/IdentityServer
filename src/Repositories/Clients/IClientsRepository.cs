@@ -4,6 +4,6 @@ namespace IdentityServer.Repositories.Clients
 {
     public interface IClientsRepository
     {
-        Task<IEnumerable<Client>> FindClientsAsync();
+        Task<Client> FindClientByIdAsync(string clientId);
     }
 }
