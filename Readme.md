@@ -1,3 +1,9 @@
+# Discovery Endpoints & Confiurations
+
+```powershell
+https://localhost:5001/.well-known/openid-configuration
+```  
+
 # APIs Authorization  (client credentials)
 
 ### Get a new Token
