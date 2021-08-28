@@ -25,9 +25,9 @@ public class InMemoryResourcesRepository : IResourcesRepository
     {
         var resources = new List<ApiResource>
         {
-            new ApiResource("invoice", "Invoice API")
+            new ApiResource("weather", "Weather API")
             {
-                Scopes = { "invoice.read", "invoice.write" },
+                Scopes = { "weather.read", "weather.write" },
             },
         };
         return Task.FromResult<IEnumerable<ApiResource>>(resources);
@@ -37,8 +37,8 @@ public class InMemoryResourcesRepository : IResourcesRepository
     {
         var scopes = new[]
         {
-            new ApiScope("invoice.read"),
-            new ApiScope("invoice.write"),
+            new ApiScope("weather.read"),
+            new ApiScope("weather.write"),
         };
         return Task.FromResult<IEnumerable<ApiScope>>(scopes);
     }

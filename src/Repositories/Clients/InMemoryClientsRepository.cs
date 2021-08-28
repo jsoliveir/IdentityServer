@@ -9,20 +9,10 @@ public class InMemoryClientsRepository : IClientsRepository
         {
             new Client
             {
-                ClientId = "service.client",
+                ClientId = "service.weather",
                 ClientSecrets = { new Secret("secret".Sha256()) },
-                AllowedGrantTypes = 
-                { 
-                    GrantType.AuthorizationCode,
-                    GrantType.ClientCredentials, 
-                    GrantType.ResourceOwnerPassword,
-                },
-                RedirectUris =
-                {
-                    "http://localhost:8080"
-                },                
-                RequirePkce=false,
-                AllowedScopes = { "openid", "profile", "invoice.read" },
+                AllowedGrantTypes = { GrantType.ClientCredentials },
+                AllowedScopes = { "weather.read" },
             }
         };
         return Task.FromResult<IEnumerable<Client>>(clients);

@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31606.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "src\IdentityServer.csproj", "{534781FF-12B1-436B-B0A2-63DF6FFB38D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "src\IdentityServer.csproj", "{534781FF-12B1-436B-B0A2-63DF6FFB38D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Core.Weather", "tests\integration\Service.Core.Weather\Service.Core.Weather.csproj", "{97B0D0CD-35C2-47FE-9E47-89A17CA52150}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9E5C4564-7362-47C3-AEA7-F25405DD3948}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "integration", "integration", "{1A8A0CEB-BCDC-4708-82D6-23F9D9FACE3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +21,17 @@ Global
 		{534781FF-12B1-436B-B0A2-63DF6FFB38D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{534781FF-12B1-436B-B0A2-63DF6FFB38D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{534781FF-12B1-436B-B0A2-63DF6FFB38D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97B0D0CD-35C2-47FE-9E47-89A17CA52150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97B0D0CD-35C2-47FE-9E47-89A17CA52150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97B0D0CD-35C2-47FE-9E47-89A17CA52150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97B0D0CD-35C2-47FE-9E47-89A17CA52150}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{97B0D0CD-35C2-47FE-9E47-89A17CA52150} = {1A8A0CEB-BCDC-4708-82D6-23F9D9FACE3D}
+		{1A8A0CEB-BCDC-4708-82D6-23F9D9FACE3D} = {9E5C4564-7362-47C3-AEA7-F25405DD3948}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6B898BF9-C4C8-4377-81E6-6BC6855314AC}
