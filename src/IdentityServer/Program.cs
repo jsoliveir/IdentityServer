@@ -11,7 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services
-    .AddIdentityServer(o=> o.IssuerUri = builder.Configuration.GetValue<string>("IdentityServer:IssuerUri"))
+    .AddIdentityServer(o=> o.IssuerUri = builder.Configuration
+        .GetValue<string>("IdentityServer:IssuerUri"))
     .AddResourceStore<ResourceStoreService>()
     .AddClientStore<ClientStoreService>()
     .AddProfileService<ProfileService>()
