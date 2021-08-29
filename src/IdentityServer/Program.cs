@@ -1,3 +1,4 @@
+using IdentityServer.Extensions;
 using IdentityServer.Repositories.Clients;
 using IdentityServer.Repositories.Resources;
 using IdentityServer.Repositories.Users;
@@ -6,17 +7,14 @@ using IdentityServer4.Extensions;
 using IdentityServer4.Validation;
 using IndentityServer.Services;
 
-var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddControllers();
+var builder = WebApplication
+    .CreateBuilder(args);
 
 builder.Services
-    .AddIdentityServer(o=> o.IssuerUri = builder.Configuration
-        .GetValue<string>("IdentityServer:IssuerUri"))
-    .AddResourceStore<ResourceStoreService>()
-    .AddClientStore<ClientStoreService>()
-    .AddProfileService<ProfileService>()
-    .AddDeveloperSigningCredential();
+    .AddControllers();
+
+builder.Services
+    .AddIdentityServerBehindGateway(builder.Configuration);
 
 builder.Services
     .AddSingleton<IResourceOwnerPasswordValidator, PasswordValidatorService>()
@@ -29,16 +27,7 @@ var app = builder.Build();
 if (builder.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 
-app.Use((context, next) =>
-{
-    context.SetIdentityServerOrigin(
-        builder.Configuration.GetValue<string>("IdentityServer:IssuerUri"));
-
-    return next();
-});
-
-app.UseIdentityServer();
-
+app.UseIdentityServerBehindGateway(builder.Configuration);
 //app.UseHttpsRedirection();
 
 app.UseAuthorization();
