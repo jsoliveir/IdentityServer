@@ -1,3 +1,9 @@
+
+# Start up the containers
+```powershell
+docker-compose up --build --force-recreate
+```
+
 # Discovery Endpoints & Confiurations
 
 ```powershell
