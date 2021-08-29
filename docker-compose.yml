@@ -7,6 +7,10 @@ services:
 
     identity-server:
         build: src/IdentityServer/
-            
+        environment:
+            ASPNETCORE_ENVIRONMENT: Docker  
+
     weather-service:
         build: src/Service.Core.Weather/
+        environment:
+            ASPNETCORE_ENVIRONMENT: Docker  
