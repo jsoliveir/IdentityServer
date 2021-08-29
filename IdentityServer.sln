@@ -3,19 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31606.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "src\IdentityServer.csproj", "{534781FF-12B1-436B-B0A2-63DF6FFB38D9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Core.Weather", "tests\integration\Service.Core.Weather\Service.Core.Weather.csproj", "{97B0D0CD-35C2-47FE-9E47-89A17CA52150}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9E5C4564-7362-47C3-AEA7-F25405DD3948}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "interation", "interation", "{1A8A0CEB-BCDC-4708-82D6-23F9D9FACE3D}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "client_credentials", "client_credentials", "{C37DFE4E-8FE5-4DAA-A294-932ECAFA2937}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7704D652-7E63-4589-8F41-1AFA874085EA}"
 	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
 		Readme.md = Readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{C92DBCF1-1FB8-4BDC-8427-7F7066B0C637}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "src\IdentityServer\IdentityServer.csproj", "{4E1F35B8-75A7-4BA8-AE90-0876C51ACD19}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Core.Weather", "src\Service.Core.Weather\Service.Core.Weather.csproj", "{9BAEF331-C80F-4938-AB35-D46102050D9A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{A37E0A92-E8E5-43B1-8A8D-B1317CC02347}"
+	ProjectSection(SolutionItems) = preProject
+		src\Gateway\nginx.conf = src\Gateway\nginx.conf
 	EndProjectSection
 EndProject
 Global
@@ -24,22 +26,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{534781FF-12B1-436B-B0A2-63DF6FFB38D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{534781FF-12B1-436B-B0A2-63DF6FFB38D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{534781FF-12B1-436B-B0A2-63DF6FFB38D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{534781FF-12B1-436B-B0A2-63DF6FFB38D9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{97B0D0CD-35C2-47FE-9E47-89A17CA52150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{97B0D0CD-35C2-47FE-9E47-89A17CA52150}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{97B0D0CD-35C2-47FE-9E47-89A17CA52150}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{97B0D0CD-35C2-47FE-9E47-89A17CA52150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E1F35B8-75A7-4BA8-AE90-0876C51ACD19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E1F35B8-75A7-4BA8-AE90-0876C51ACD19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E1F35B8-75A7-4BA8-AE90-0876C51ACD19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E1F35B8-75A7-4BA8-AE90-0876C51ACD19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BAEF331-C80F-4938-AB35-D46102050D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BAEF331-C80F-4938-AB35-D46102050D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BAEF331-C80F-4938-AB35-D46102050D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BAEF331-C80F-4938-AB35-D46102050D9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{97B0D0CD-35C2-47FE-9E47-89A17CA52150} = {C37DFE4E-8FE5-4DAA-A294-932ECAFA2937}
-		{1A8A0CEB-BCDC-4708-82D6-23F9D9FACE3D} = {9E5C4564-7362-47C3-AEA7-F25405DD3948}
-		{C37DFE4E-8FE5-4DAA-A294-932ECAFA2937} = {1A8A0CEB-BCDC-4708-82D6-23F9D9FACE3D}
+		{4E1F35B8-75A7-4BA8-AE90-0876C51ACD19} = {C92DBCF1-1FB8-4BDC-8427-7F7066B0C637}
+		{9BAEF331-C80F-4938-AB35-D46102050D9A} = {C92DBCF1-1FB8-4BDC-8427-7F7066B0C637}
+		{A37E0A92-E8E5-43B1-8A8D-B1317CC02347} = {7704D652-7E63-4589-8F41-1AFA874085EA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6B898BF9-C4C8-4377-81E6-6BC6855314AC}

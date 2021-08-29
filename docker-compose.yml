@@ -1,0 +1,12 @@
+services:
+    gateway:
+        image: nginx
+        ports: ["8080:80"]
+        volumes: 
+            - ./src/gateway/nginx.conf:/etc/nginx/nginx.conf
+
+    identity-server:
+        build: src/IdentityServer/
+            
+    weather-service:
+        build: src/Service.Core.Weather/

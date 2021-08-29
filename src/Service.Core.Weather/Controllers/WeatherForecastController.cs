@@ -5,8 +5,8 @@ using Service.Core.Weather.Models;
 namespace Service.Core.Weather.Controllers;
 [ApiController]
 [Route("[controller]")]
-[Authorize]
-public class WeatherForecastController : ControllerBase
+[Authorize("weather.read")]
+public class WeatherForecastController : Controller
 {
     private static readonly string[] Summaries = new[]
     {
