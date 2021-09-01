@@ -1,0 +1,36 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Service.Identity",
+            "command": "dotnet",
+            "type": "shell",
+            "args": ["build","src/IdentityServer/"],
+            "group": "build"
+        },
+        {
+            "label": "Build Service.Weather",
+            "command": "dotnet",
+            "type": "shell",
+            "args": ["build","src/Service.Weather/"],
+            "group": "build"
+        },
+        {
+            "label": "Build Web.UI",
+            "command": "yarn",
+            "type": "shell",
+            "args": ["--cwd","src/web.ui/", "build"],
+            "group": "build"
+        },
+        {
+            "label": "Start Web.UI",
+            "command": "yarn",
+            "type": "shell",
+            "args": ["--cwd","src/web.ui/", "start"],
+            "isBackground": true,
+            "group": "test"
+        }
+    ]
+}

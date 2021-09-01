@@ -1,0 +1,49 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Identity Server",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "Build Service.Identity",
+            "program": "${workspaceFolder}/src/IdentityServer/bin/Debug/net6.0/IdentityServer.dll",
+            "cwd": "${workspaceFolder}/src/IdentityServer",
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+        },
+        {
+            "name": "Weather Service",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "Build Service.Weather",
+            "program": "${workspaceFolder}/src/Service.Weather/bin/Debug/net6.0/Service.Core.Weather.dll",
+            "cwd": "${workspaceFolder}/src/Service.Weather",
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+        },
+        {
+            "name": "Web UI",
+            "type": "pwa-msedge",
+            "request": "launch",
+            "preLaunchTask": "Start Web.UI",
+            "url": "http://localhost:3000",
+            "cwd": "${workspaceFolder}/src/Web.UI",
+        }
+       
+    ],
+    "compounds": [
+        {
+            "name": "All",
+            "configurations": [
+                "Identity Server", 
+                "Weather Service",
+                "Web UI"
+            ]
+        }
+    ]
+}

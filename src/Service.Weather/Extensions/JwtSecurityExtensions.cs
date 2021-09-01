@@ -33,8 +33,7 @@ public static class JwtSecurityExtensions
 
         services.AddAuthorization(options =>
         {
-            foreach (var scope in scopes) options.AddPolicy(scope, 
-                policy => policy.RequireClaim("scope", scope));
+            foreach (var scope in scopes) options.AddPolicy(scope, policy => policy.RequireClaim("scope", scope));
         });
     }
 
