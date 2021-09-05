@@ -7,8 +7,10 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Authorize login="/">
-          <Route path="/auth"><div>OK</div></Route>
+        <Authorize login="/login">
+          <Route path="/account">
+            <div> Token is Valid </div>
+          </Route>
         </Authorize>
       </Switch>
     </Router>
