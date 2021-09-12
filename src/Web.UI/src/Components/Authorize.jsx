@@ -50,7 +50,7 @@ export default function Authorize({authority,scopes,children,expire=30}) {
                 <input type="hidden" name="client_id" value="client"/>
                 <input type="hidden" name="scope" value={scopes}/>
                 <input type="hidden" name="response_type" value="token"/>
-                <input type="hidden" name="redirect_uri" value={window.location.origin}/>
+                <input type="hidden" name="redirect_uri" value={window.location.href}/>
             </form>
         )
     }
