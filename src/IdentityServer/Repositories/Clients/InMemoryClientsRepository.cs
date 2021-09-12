@@ -27,6 +27,7 @@ public class InMemoryClientsRepository : IClientsRepository
                 AllowedGrantTypes = { GrantType.Implicit },
                 AllowedScopes = { "weather.read" },
                 RequireClientSecret = false,
+                AccessTokenLifetime = 60,
                 RedirectUris = new string[]
                 {
                     "http://localhost:3000"
