@@ -22,4 +22,10 @@ public class InMemoryUsersRepository : IUsersRepository
     {
         return GetTestUser();
     }
+
+    public async Task<bool> ValidateCredentials(string username, string password)
+    {
+        var user = await FindUserByUserName(username);
+        return user.Password == password;
+    }
 }

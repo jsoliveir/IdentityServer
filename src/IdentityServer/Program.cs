@@ -14,7 +14,16 @@ builder.Services
     .AddControllers();
 
 builder.Services
+    .AddMvc();
+
+builder.Services
     .AddIdentityServerBehindGateway(builder.Configuration);
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = "Cookies";
+})
+.AddCookie("Cookies");
 
 builder.Services
     .AddSingleton<IResourceOwnerPasswordValidator, PasswordValidatorService>()
@@ -27,11 +36,20 @@ var app = builder.Build();
 if (builder.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 
+app.UseStaticFiles();
+
 app.UseIdentityServerBehindGateway(builder.Configuration);
 //app.UseHttpsRedirection();
+
+app.UseRouting();
 
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
+});
 
 app.Run();

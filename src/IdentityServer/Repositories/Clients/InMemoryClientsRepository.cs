@@ -20,6 +20,18 @@ public class InMemoryClientsRepository : IClientsRepository
                 AllowedGrantTypes = { GrantType.ResourceOwnerPassword },
                 AllowedScopes = { "openid", "profile" },
                 RequireClientSecret = false
+            },
+             new Client
+            {
+                ClientId = "client",
+                AllowedGrantTypes = { GrantType.Implicit },
+                AllowedScopes = { "weather.read" },
+                RequireClientSecret = false,
+                RedirectUris = new string[]
+                {
+                    "http://localhost:3000"
+                },
+                AllowAccessTokensViaBrowser = true,
             }
         };
         return Task.FromResult(clients.First(c=>c.ClientId == clientId));
