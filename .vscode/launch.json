@@ -11,8 +11,16 @@
             "preLaunchTask": "Build Service.Identity",
             "program": "${workspaceFolder}/src/IdentityServer/bin/Debug/net6.0/IdentityServer.dll",
             "cwd": "${workspaceFolder}/src/IdentityServer",
+            "launchBrowser": {
+                "enabled": true,
+                "windows": {
+                    "command": "cmd.exe",
+                    "args": "/C start http://localhost:5000/.well-known/openid-configuration"
+                }
+            },
             "env": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "ASPNETCORE_URLS": "http://localhost:5000"
             },
         },
         {
@@ -23,7 +31,8 @@
             "program": "${workspaceFolder}/src/Service.Weather/bin/Debug/net6.0/Service.Core.Weather.dll",
             "cwd": "${workspaceFolder}/src/Service.Weather",
             "env": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "ASPNETCORE_URLS": "http://localhost:5001"
             },
         },
         {

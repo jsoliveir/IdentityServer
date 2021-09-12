@@ -28,7 +28,7 @@
             "label": "Start Web.UI",
             "command": "yarn",
             "type": "shell",
-            "args": ["--cwd","src/web.ui/", "start"],
+            "args": ["--cwd","src/Web.UI", "start"],
             "isBackground": true,
             "group": "test"
         }

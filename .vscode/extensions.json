@@ -1,0 +1,6 @@
+{
+    "recommendations": [
+        "humao.rest-client",
+        "jflbr.jwt-decoder"
+    ]
+}
