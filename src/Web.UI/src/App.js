@@ -1,19 +1,14 @@
-import Authorize from './Components/Authorize'
-import { BrowserRouter as Router,Route,Switch } from 'react-router-dom'
 import logo from './logo.svg';
 import './App.css';
-
+import {getAccessToken} from './Components/Authorize';
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Authorize login="/login">
-          <Route path="/account">
-            <div> Token is Valid </div>
-          </Route>
-        </Authorize>
-      </Switch>
-    </Router>
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>You've been authorized to load this page!</p>
+        </header>
+      </div>
   );
 }
 
