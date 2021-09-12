@@ -30,7 +30,7 @@ public class InMemoryClientsRepository : IClientsRepository
                 AccessTokenLifetime = 60,
                 RedirectUris = new string[]
                 {
-                    "http://localhost:3000"
+                    "http://localhost:3000/"
                 },
                 AllowAccessTokensViaBrowser = true,
             }
