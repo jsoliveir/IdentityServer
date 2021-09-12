@@ -1,0 +1,10 @@
+
+POST http://localhost:5001/connect/authorize
+Content-Type: application/x-www-form-urlencoded
+
+client_id=client
+&scope=openid profile
+&response_type=code
+&redirect_uri=http://localhost:5001/callback
+&state=abc
+&nonce=xyz
