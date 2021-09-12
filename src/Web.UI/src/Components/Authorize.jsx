@@ -13,6 +13,7 @@ export function getAccessToken(){
     var access_token = getAccessTokenFromUrl()   
     return access_token || cookies.get("access_token")
 }
+
 export function setAccessToken(token,expire){
     cookies.set("access_token",token,{path:"/",expires: new Date(Date.now() + (expire * 1000))});
 }
@@ -43,7 +44,7 @@ export default function Authorize({authority,scopes,children,expire=30}) {
             setAuthorized(true);
         }
     }catch (ex){
-
+        console.error(ex);
         return (
             <form id="authorize" method="POST" action={authority + "/connect/authorize"} >
                 <input type="hidden" name="client_id" value="client"/>
@@ -53,6 +54,5 @@ export default function Authorize({authority,scopes,children,expire=30}) {
             </form>
         )
     }
-
     return children
 }
